@@ -55,4 +55,43 @@ public class Clock : MonoBehaviour
         hand1.gameObject.SetActive(visible);
         hand2.gameObject.SetActive(visible);
     }
+
+
+    public void shape(int corner)
+    {
+        switch (corner)
+        {
+            case 0:
+                angle1 = 1;
+                break;
+            case 1:
+                angle1 = 0;
+                angle2 = -90;
+                break;
+            case 2:
+                angle1 = -90;
+                angle2 = 90;
+                break;
+            case 3:
+                angle1 = 90;
+                angle2 = 0;
+                break;
+            case 4:
+                angle1 = 0;
+                angle2 = 180;
+                break;
+            case 7:
+                angle1 = -90;
+                angle2 = 180;
+                break;
+            case 9:
+                angle1 = 90;
+                angle2 = 180;
+                break;
+            default:
+                angle1 = 0;
+                break;
+
+        }
+    }
 }
