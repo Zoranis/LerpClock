@@ -80,9 +80,17 @@ public class Clock : MonoBehaviour
                 angle1 = 0;
                 angle2 = 180;
                 break;
+            case 6:
+                angle1 = 0;
+                angle2 = 180;
+                break;
             case 7:
                 angle1 = -90;
                 angle2 = 180;
+                break;
+            case 8:
+                angle1 = -90;
+                angle2 = 90;
                 break;
             case 9:
                 angle1 = 90;
