@@ -1,4 +1,3 @@
-using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -31,7 +30,6 @@ public class Clock : MonoBehaviour
     // Update is called once per frame
     void FixedUpdate()
     {
-        DateTime time = System.DateTime.Now;
 
         //angle1 = -time.Minute * 360 / 60;
         //angle2 = -time.Second * 360 / 60;

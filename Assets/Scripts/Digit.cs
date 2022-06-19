@@ -37,7 +37,7 @@ public class Digit : MonoBehaviour
                 0,0,6,
                 2,2,3 },
 
-    new int[] { 4,8,4,  // 4
+    new int[] { 4,0,4,  // 4
                 4,0,4,
                 1,8,4,
                 0,0,4,
