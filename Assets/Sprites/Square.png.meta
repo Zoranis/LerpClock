@@ -122,12 +122,12 @@ TextureImporter:
       name: Square
       rect:
         serializedVersion: 2
-        x: 28
-        y: 133
-        width: 125
-        height: 10
+        x: 123
+        y: 123
+        width: 10
+        height: 123
       alignment: 9
-      pivot: {x: 0.95, y: 0.5}
+      pivot: {x: 0.5, y: 0.05}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
