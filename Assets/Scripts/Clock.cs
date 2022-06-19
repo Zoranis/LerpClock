@@ -3,6 +3,13 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+
+public struct AngleCouple
+{
+    public float angle1;
+    public float angle2;
+}
+
 public class Clock : MonoBehaviour
 {
 
@@ -26,26 +33,26 @@ public class Clock : MonoBehaviour
     {
         DateTime time = System.DateTime.Now;
 
-        angle1 = -time.Minute * 360 / 60;
-        angle2 = -time.Second * 360 / 60;
+        //angle1 = -time.Minute * 360 / 60;
+        //angle2 = -time.Second * 360 / 60;
 
         hand1.rotation = Quaternion.Lerp(hand1.rotation, Quaternion.Euler(0, 0, angle1), speed);
         hand2.rotation = Quaternion.Lerp(hand2.rotation, Quaternion.Euler(0, 0, angle2), speed);
 
-        //hand1.rotation = Quaternion.Lerp(hand1.rotation, Quaternion.Euler(0, 0, angle1), timeCount * speed);
-        //hand2.rotation = Quaternion.Lerp(hand2.rotation, Quaternion.Euler(0, 0, angle2), timeCount * speed);
+        if (angle1 == 1)
+        {
+            show(false);
+        }
+        else
+        {
+            show(true);
+        }
 
-        //angle1 = -time.Hour * 360 / 12;
-        //angle2 = -time.Minute * 360 / 60;
+    }
 
-        //hand1.rotation = Quaternion.Lerp(hand1.rotation, Quaternion.Euler(0, 0, angle1), timeCount * speed);
-        //hand2.rotation = Quaternion.Lerp(hand1.rotation, Quaternion.Euler(0, 0, angle2), timeCount * speed);
-
-        //angle1 = -time.Second * 360 / 60;
-        //hand1.rotation = Quaternion.Lerp(hand1.rotation, Quaternion.Euler(0, 0, angle1), timeCount * speed);
-
-        //Debug.Log("Seconds: " + time.Second.ToString());
-        //Debug.Log("Angle: " + angle1);
-
+    private void show(bool visible)
+    {
+        hand1.gameObject.SetActive(visible);
+        hand2.gameObject.SetActive(visible);
     }
 }

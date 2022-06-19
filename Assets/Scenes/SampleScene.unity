@@ -264,7 +264,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4677777077211177973, guid: 7e96e0754743fc242b466f39ecfbb9fb, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7e96e0754743fc242b466f39ecfbb9fb, type: 3}
@@ -278,6 +278,10 @@ PrefabInstance:
     - target: {fileID: 3004723691958218613, guid: 0045b8b829dad4641afb6ee9d30c8069, type: 3}
       propertyPath: m_Name
       value: Clock
+      objectReference: {fileID: 0}
+    - target: {fileID: 3004723691958218613, guid: 0045b8b829dad4641afb6ee9d30c8069, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3004723691958218614, guid: 0045b8b829dad4641afb6ee9d30c8069, type: 3}
       propertyPath: m_RootOrder
@@ -410,7 +414,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4677777077211177973, guid: 7e96e0754743fc242b466f39ecfbb9fb, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7e96e0754743fc242b466f39ecfbb9fb, type: 3}
@@ -471,7 +475,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4677777077211177973, guid: 7e96e0754743fc242b466f39ecfbb9fb, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7e96e0754743fc242b466f39ecfbb9fb, type: 3}
@@ -482,6 +486,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 762101485304450609, guid: 7e96e0754743fc242b466f39ecfbb9fb, type: 3}
+      propertyPath: angle1
+      value: -90
+      objectReference: {fileID: 0}
+    - target: {fileID: 762101485304450609, guid: 7e96e0754743fc242b466f39ecfbb9fb, type: 3}
+      propertyPath: angle2
+      value: -270
+      objectReference: {fileID: 0}
     - target: {fileID: 4677777077211177970, guid: 7e96e0754743fc242b466f39ecfbb9fb, type: 3}
       propertyPath: m_RootOrder
       value: 1
@@ -532,7 +544,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4677777077211177973, guid: 7e96e0754743fc242b466f39ecfbb9fb, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7e96e0754743fc242b466f39ecfbb9fb, type: 3}
