@@ -20,6 +20,9 @@ public class Clock : MonoBehaviour
     [SerializeField] private float angle1;
     [SerializeField] private float angle2;
 
+    [SerializeField] private Quaternion previousRotation1;
+    [SerializeField] private Quaternion previousRotation2;
+
 
     // Start is called before the first frame update
     void Start()
@@ -34,8 +37,11 @@ public class Clock : MonoBehaviour
         //angle1 = -time.Minute * 360 / 60;
         //angle2 = -time.Second * 360 / 60;
 
-        hand1.rotation = Quaternion.Lerp(hand1.rotation, Quaternion.Euler(0, 0, angle1), speed);
-        hand2.rotation = Quaternion.Lerp(hand2.rotation, Quaternion.Euler(0, 0, angle2), speed);
+        //hand1.rotation = Quaternion.Lerp(hand1.rotation, Quaternion.Euler(0, 0, angle1), speed);
+        //hand2.rotation = Quaternion.Lerp(hand2.rotation, Quaternion.Euler(0, 0, angle2), speed);
+
+        hand1.rotation = Quaternion.Lerp(previousRotation1, Quaternion.Euler(0, 0, angle1), speed);
+        hand2.rotation = Quaternion.Lerp(previousRotation2, Quaternion.Euler(0, 0, angle2), speed);
 
         if (angle1 == 1)
         {
@@ -50,6 +56,9 @@ public class Clock : MonoBehaviour
 
     private void show(bool visible)
     {
+        previousRotation1 = hand1.rotation;
+        previousRotation2 = hand2.rotation;
+
         hand1.gameObject.SetActive(visible);
         hand2.gameObject.SetActive(visible);
     }
