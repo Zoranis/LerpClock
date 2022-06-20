@@ -59,41 +59,59 @@ public class Clock : MonoBehaviour
     {
         switch (corner)
         {
-            case 0:
+            case 0: // invisible
                 angle1 = 1;
                 break;
-            case 1:
+            case 1: // Bottom left corner
                 angle1 = 0;
                 angle2 = -90;
                 break;
-            case 2:
+            case 2: // Horizontal line
                 angle1 = -90;
                 angle2 = 90;
                 break;
-            case 3:
+            case 3: // Bottom right corner
                 angle1 = 90;
                 angle2 = 0;
                 break;
-            case 4:
+            case 4: // Vertical line
                 angle1 = 0;
                 angle2 = 180;
                 break;
-            case 6:
+            case 6: // Vertical line
                 angle1 = 0;
                 angle2 = 180;
                 break;
-            case 7:
+            case 7: // Top left corner
                 angle1 = -90;
                 angle2 = 180;
                 break;
-            case 8:
+            case 8: // Horizontal line
                 angle1 = -90;
                 angle2 = 90;
                 break;
-            case 9:
+            case 9: // Top right corner
                 angle1 = 90;
                 angle2 = 180;
                 break;
+            case 81: // Top short line
+                angle1 = 0;
+                angle2 = 0;
+                break;
+            case 41: // Left short line
+                angle1 = 270;
+                angle2 = 270;
+                break;
+            case 61: // Right short line
+                angle1 = -90;
+                angle2 = -90;
+                break;
+            case 21: // Bottom short line
+                angle1 = 180;
+                angle2 = 180;
+                break;
+
+
             default:
                 angle1 = 0;
                 break;

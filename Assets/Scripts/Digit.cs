@@ -23,7 +23,7 @@ public class Digit : MonoBehaviour
                 0,4,0,
                 0,4,0,
                 0,4,0,
-                0,3,0, },
+                0,81,0, },
 
     new int[] { 7,8,9,  // 2
                 0,0,6,
@@ -37,11 +37,11 @@ public class Digit : MonoBehaviour
                 0,0,6,
                 1,2,3 },
 
-    new int[] { 7,0,9,  // 4
+    new int[] { 21,0,21,  // 4
                 4,0,4,
                 1,8,4,
                 0,0,4,
-                0,0,3 },
+                0,0,81 },
 
     new int[] { 7,8,9,  // 5
                 4,0,0,
@@ -59,7 +59,7 @@ public class Digit : MonoBehaviour
                 0,0,6,
                 0,0,6,
                 0,0,6,
-                0,0,3 },
+                0,0,81 },
 
     new int[] { 7,8,9,  // 8
                 4,0,6,
@@ -71,7 +71,7 @@ public class Digit : MonoBehaviour
                 4,0,6,
                 1,2,6,
                 0,0,6,
-                1,2,3 }
+                61,2,3 }
 
 
 };
