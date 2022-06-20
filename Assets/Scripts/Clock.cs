@@ -29,9 +29,10 @@ public class Clock : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-
     }
-
+    private void Update()
+    {
+    }
     // Update is called once per frame
     void FixedUpdate()
     {
@@ -39,11 +40,11 @@ public class Clock : MonoBehaviour
         //angle1 = -time.Minute * 360 / 60;
         //angle2 = -time.Second * 360 / 60;
 
-        //hand1.rotation = Quaternion.Lerp(hand1.rotation, Quaternion.Euler(0, 0, angle1), speed);
-        //hand2.rotation = Quaternion.Lerp(hand2.rotation, Quaternion.Euler(0, 0, angle2), speed);
+        hand1.rotation = Quaternion.Lerp(hand1.rotation, Quaternion.Euler(0, 0, angle1), Manager.instance.speed * Time.deltaTime);
+        hand2.rotation = Quaternion.Lerp(hand2.rotation, Quaternion.Euler(0, 0, angle2), Manager.instance.speed * Time.deltaTime);
 
-        hand1.rotation = Quaternion.Lerp(previousRotation1, Quaternion.Euler(0, 0, angle1), Manager.instance.speed);
-        hand2.rotation = Quaternion.Lerp(previousRotation2, Quaternion.Euler(0, 0, angle2), Manager.instance.speed);
+        //hand1.rotation = Quaternion.LerpUnclamped(previousRotation1, Quaternion.Euler(0, 0, angle1), Manager.instance.speed);
+        //hand2.rotation = Quaternion.LerpUnclamped(previousRotation2, Quaternion.Euler(0, 0, angle2), Manager.instance.speed);
 
         if (angle1 == 1)
         {
