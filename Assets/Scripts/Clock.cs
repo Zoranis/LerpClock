@@ -12,10 +12,12 @@ public struct AngleCouple
 public class Clock : MonoBehaviour
 {
 
+    [SerializeField] Manager _manager;
+
     [SerializeField] Transform hand1;
     [SerializeField] Transform hand2;
 
-    [SerializeField] float speed = 0.01f;
+    //[SerializeField] float speed = 0.01f;
 
     [SerializeField] private float angle1;
     [SerializeField] private float angle2;
@@ -40,8 +42,8 @@ public class Clock : MonoBehaviour
         //hand1.rotation = Quaternion.Lerp(hand1.rotation, Quaternion.Euler(0, 0, angle1), speed);
         //hand2.rotation = Quaternion.Lerp(hand2.rotation, Quaternion.Euler(0, 0, angle2), speed);
 
-        hand1.rotation = Quaternion.Lerp(previousRotation1, Quaternion.Euler(0, 0, angle1), speed);
-        hand2.rotation = Quaternion.Lerp(previousRotation2, Quaternion.Euler(0, 0, angle2), speed);
+        hand1.rotation = Quaternion.Lerp(previousRotation1, Quaternion.Euler(0, 0, angle1), Manager.instance.speed);
+        hand2.rotation = Quaternion.Lerp(previousRotation2, Quaternion.Euler(0, 0, angle2), Manager.instance.speed);
 
         if (angle1 == 1)
         {
