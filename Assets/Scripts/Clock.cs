@@ -17,33 +17,22 @@ public class Clock : MonoBehaviour
 
     //[SerializeField] float speed = 0.01f;
 
-    [SerializeField] private float angle1;
-    [SerializeField] private float angle2;
+    private float angle1;
+    private float angle2;
 
-    [SerializeField] private float length1;
-    [SerializeField] private float length2;
-
-
-    [SerializeField] private Quaternion previousRotation1;
-    [SerializeField] private Quaternion previousRotation2;
-
-    [SerializeField] private float previousLength1;
-    [SerializeField] private float previousLength2;
+    private float length1;
+    private float length2;
 
 
-    // Start is called before the first frame update
-    void Start()
+    private Quaternion previousRotation1;
+    private Quaternion previousRotation2;
+
+    private float previousLength1;
+    private float previousLength2;
+
+
+    void Update()
     {
-    }
-    private void Update()
-    {
-    }
-    // Update is called once per frame
-    void FixedUpdate()
-    {
-
-        //angle1 = -time.Minute * 360 / 60;
-        //angle2 = -time.Second * 360 / 60;
 
         hand1.rotation = Quaternion.Lerp(hand1.rotation, Quaternion.Euler(0, 0, angle1), Manager.instance.speed);
         hand2.rotation = Quaternion.Lerp(hand2.rotation, Quaternion.Euler(0, 0, angle2), Manager.instance.speed);
@@ -51,46 +40,20 @@ public class Clock : MonoBehaviour
         hand1.localScale = new Vector3(hand1.localScale.x, Mathf.Lerp(previousLength1, length1, Manager.instance.speed), hand1.localScale.z);
         hand2.localScale = new Vector3(hand2.localScale.x, Mathf.Lerp(previousLength2, length2, Manager.instance.speed), hand2.localScale.z);
 
-        //hand1.rotation = Quaternion.LerpUnclamped(previousRotation1, Quaternion.Euler(0, 0, angle1), Manager.instance.speed);
-        //hand2.rotation = Quaternion.LerpUnclamped(previousRotation2, Quaternion.Euler(0, 0, angle2), Manager.instance.speed);
-
-        //if (angle1 == 1)
-        //{
-        //    show(false);
-        //}
-        //else
-        //{
-        //    show(true);
-        //}
-
     }
-
-    //private void show(bool visible)
-    //{
-    //    previousRotation1 = hand1.rotation;
-    //    previousRotation2 = hand2.rotation;
-
-    //    //hand1.gameObject.SetActive(visible);
-    //    //hand2.gameObject.SetActive(visible);
-
-    //    previousLength1 = hand1.localScale.y;
-    //    previousLength2 = hand2.localScale.y;
-    //}
-
 
     public void shape(int corner)
     {
 
         previousRotation1 = hand1.rotation;
         previousRotation2 = hand2.rotation;
+
         previousLength1 = hand1.localScale.y;
         previousLength2 = hand2.localScale.y;
 
         switch (corner)
         {
             case 0: // invisible
-                angle1 = 225;
-                angle2 = 225;
                 length1 = 0;
                 length2 = 0;
                 break;
