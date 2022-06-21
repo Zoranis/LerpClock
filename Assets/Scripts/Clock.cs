@@ -12,8 +12,6 @@ public struct AngleCouple
 public class Clock : MonoBehaviour
 {
 
-    [SerializeField] Manager _manager;
-
     [SerializeField] Transform hand1;
     [SerializeField] Transform hand2;
 
@@ -22,8 +20,15 @@ public class Clock : MonoBehaviour
     [SerializeField] private float angle1;
     [SerializeField] private float angle2;
 
+    [SerializeField] private float length1;
+    [SerializeField] private float length2;
+
+
     [SerializeField] private Quaternion previousRotation1;
     [SerializeField] private Quaternion previousRotation2;
+
+    [SerializeField] private float previousLength1;
+    [SerializeField] private float previousLength2;
 
 
     // Start is called before the first frame update
@@ -40,87 +45,126 @@ public class Clock : MonoBehaviour
         //angle1 = -time.Minute * 360 / 60;
         //angle2 = -time.Second * 360 / 60;
 
-        hand1.rotation = Quaternion.Lerp(hand1.rotation, Quaternion.Euler(0, 0, angle1), Manager.instance.speed * Time.deltaTime);
-        hand2.rotation = Quaternion.Lerp(hand2.rotation, Quaternion.Euler(0, 0, angle2), Manager.instance.speed * Time.deltaTime);
+        hand1.rotation = Quaternion.Lerp(hand1.rotation, Quaternion.Euler(0, 0, angle1), Manager.instance.speed);
+        hand2.rotation = Quaternion.Lerp(hand2.rotation, Quaternion.Euler(0, 0, angle2), Manager.instance.speed);
+
+        hand1.localScale = new Vector3(hand1.localScale.x, Mathf.Lerp(previousLength1, length1, Manager.instance.speed), hand1.localScale.z);
+        hand2.localScale = new Vector3(hand2.localScale.x, Mathf.Lerp(previousLength2, length2, Manager.instance.speed), hand2.localScale.z);
 
         //hand1.rotation = Quaternion.LerpUnclamped(previousRotation1, Quaternion.Euler(0, 0, angle1), Manager.instance.speed);
         //hand2.rotation = Quaternion.LerpUnclamped(previousRotation2, Quaternion.Euler(0, 0, angle2), Manager.instance.speed);
 
-        if (angle1 == 1)
-        {
-            show(false);
-        }
-        else
-        {
-            show(true);
-        }
+        //if (angle1 == 1)
+        //{
+        //    show(false);
+        //}
+        //else
+        //{
+        //    show(true);
+        //}
 
     }
 
-    private void show(bool visible)
-    {
-        previousRotation1 = hand1.rotation;
-        previousRotation2 = hand2.rotation;
+    //private void show(bool visible)
+    //{
+    //    previousRotation1 = hand1.rotation;
+    //    previousRotation2 = hand2.rotation;
 
-        hand1.gameObject.SetActive(visible);
-        hand2.gameObject.SetActive(visible);
-    }
+    //    //hand1.gameObject.SetActive(visible);
+    //    //hand2.gameObject.SetActive(visible);
+
+    //    previousLength1 = hand1.localScale.y;
+    //    previousLength2 = hand2.localScale.y;
+    //}
 
 
     public void shape(int corner)
     {
+
+        previousRotation1 = hand1.rotation;
+        previousRotation2 = hand2.rotation;
+        previousLength1 = hand1.localScale.y;
+        previousLength2 = hand2.localScale.y;
+
         switch (corner)
         {
             case 0: // invisible
-                angle1 = 1;
+                angle1 = 225;
+                angle2 = 225;
+                length1 = 0;
+                length2 = 0;
                 break;
             case 1: // Bottom left corner
                 angle1 = 0;
                 angle2 = -90;
+                length1 = 1;
+                length2 = 1;
                 break;
             case 2: // Horizontal line
                 angle1 = -90;
                 angle2 = 90;
+                length1 = 1;
+                length2 = 1;
                 break;
             case 3: // Bottom right corner
                 angle1 = 90;
                 angle2 = 0;
+                length1 = 1;
+                length2 = 1;
                 break;
             case 4: // Vertical line
                 angle1 = 0;
                 angle2 = 180;
+                length1 = 1;
+                length2 = 1;
                 break;
             case 6: // Vertical line
                 angle1 = 0;
                 angle2 = 180;
+                length1 = 1;
+                length2 = 1;
                 break;
             case 7: // Top left corner
                 angle1 = -90;
                 angle2 = 180;
+                length1 = 1;
+                length2 = 1;
                 break;
             case 8: // Horizontal line
                 angle1 = -90;
                 angle2 = 90;
+                length1 = 1;
+                length2 = 1;
                 break;
             case 9: // Top right corner
                 angle1 = 90;
                 angle2 = 180;
+                length1 = 1;
+                length2 = 1;
                 break;
             case 81: // Top short line
                 angle1 = 0;
                 angle2 = 0;
+                length1 = 1;
+                length2 = 1;
                 break;
             case 41: // Left short line
                 angle1 = 270;
                 angle2 = 270;
+                length1 = 1;
+                length2 = 1;
                 break;
             case 61: // Right short line
                 angle1 = -90;
                 angle2 = -90;
+                length1 = 1;
+                length2 = 1;
                 break;
             case 21: // Bottom short line
                 angle1 = 180;
                 angle2 = 180;
+                length1 = 1;
+                length2 = 1;
                 break;
 
 
