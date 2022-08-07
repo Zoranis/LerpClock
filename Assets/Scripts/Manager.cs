@@ -7,11 +7,11 @@ public class Manager : MonoBehaviour
 
     [SerializeField] public float speed = 0.01f;
 
-    static public Manager instance;
+    public static Manager Instance;
 
     private void Awake()
     {
-        instance = this;
+        Instance = this;
     }
 
 

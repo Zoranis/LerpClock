@@ -6,8 +6,8 @@ public class Digit : MonoBehaviour
 {
 
     // Holds the clock elements
-    [SerializeField] Clock[] clocks = new Clock[15];
-    [SerializeField] int initialDigit = 0;
+    [SerializeField] private Clock[] clocks = new Clock[15];
+    [SerializeField] private int initialDigit = 0;
 
     #region digit arrays
 
@@ -88,7 +88,7 @@ public class Digit : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        showDigit(initialDigit);
+        ShowDigit(initialDigit);
     }
 
     // Update is called once per frame
@@ -98,11 +98,11 @@ public class Digit : MonoBehaviour
     }
 
 
-    public void showDigit(int num)
+    public void ShowDigit(int num)
     {
         for (int i = 0; i < 15; i++)
         {
-            clocks[i].shape(digitShapes[num][i]);
+            clocks[i].Shape(digitShapes[num][i]);
         }
     }
 }
