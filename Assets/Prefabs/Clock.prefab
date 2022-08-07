@@ -72,7 +72,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 1
   m_Sprite: {fileID: 7482667652216324306, guid: 954bb3c671cfc7f48b88f9416e2e56e2, type: 3}
   m_Color: {r: 1, g: 0.99296916, b: 0, a: 1}
   m_FlipX: 0
@@ -133,11 +133,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   hand1: {fileID: 3004723691176213110}
   hand2: {fileID: 3004723692919403619}
-  speed: 0.02
-  angle1: 0
-  angle2: 180
-  previousRotation1: {x: 0, y: 0, z: 0, w: 0}
-  previousRotation2: {x: 0, y: 0, z: 0, w: 0}
 --- !u!1 &3004723692282965641
 GameObject:
   m_ObjectHideFlags: 0
@@ -294,7 +289,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 1
   m_Sprite: {fileID: 7482667652216324306, guid: 954bb3c671cfc7f48b88f9416e2e56e2, type: 3}
   m_Color: {r: 1, g: 0.99607843, b: 0, a: 1}
   m_FlipX: 0
